@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+
+void permutations(int number)
+{
+  int grt=number-1,les=number-2;
+
+  if(number == 3 || number == 2)
+  {
+    cout<<"NO SOLUTION"<<endl;
+  }
+  else if(number == 1)
+  {
+    cout<<number;
+  }
+  else
+  {
+    for(int i=1; i<=number; i++)
+      {
+        if(i == 1)
+        {
+          cout<<grt<<" ";
+        }
+        else if(number % 2 == 0 && i == (number)/2)
+        {
+          cout<<grt-2<<" ";
+        }
+        else if(number % 2 == 0 && i == (number+2)/2)
+        {
+          cout<<number<<" ";
+        }
+        else if(number % 2 != 0 && i == (number/2)+1)
+        {
+          cout<<number<<" ";
+        }
+        else if(i < (number+1)/2)
+        {
+          cout<<grt-2<<" ";
+          grt = grt-2;
+        }
+        else if(i == ((number+2)/2)+1)
+        {
+          cout<<les<<" ";
+        }
+        else if(i > (number+1)/2 && i != (number+3)/2 && les!=2)
+        {
+          cout<<les-2<<" ";
+          les = les-2;
+        }
+        
+        
+      }
+  }
+  
+}
+
+int main()
+{
+  int number;
+  cin>>number;
+
+  permutations(number);
+  
+}

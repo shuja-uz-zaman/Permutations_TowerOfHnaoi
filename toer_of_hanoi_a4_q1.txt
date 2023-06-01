@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+void t_o_h(int n, int f, int t, int h)
+{
+  if(n == 1)
+  {
+    cout<<f<<" "<<t<<endl;
+  }
+  else
+  {
+    t_o_h(n-1, f, h, t);
+    cout<<f<<" "<<t<<endl;
+    t_o_h(n-1,h, t, f);
+  }
+  
+}
+int main()
+{
+  int n, a=1, b=2, c=3, p=1;
+  cin>>n;
+
+  for(int i=1;i<=n;i++)
+    {
+      p = 2*p;
+    }
+  cout<<p-1<<endl;
+  t_o_h(n, a, c, b);
+}
