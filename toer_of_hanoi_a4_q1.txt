@@ -19,6 +19,11 @@ int main()
 {
   int n, a=1, b=2, c=3, p=1;
   cin>>n;
+  if(n < 1 || n >16)
+  {
+    cout<<"wrong input";
+    return 0; 
+  }
 
   for(int i=1;i<=n;i++)
     {
